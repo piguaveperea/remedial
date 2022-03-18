@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col">  
+                <p>
+                    <%= persona.cedula %>
+                </p>
+                <p>
+                    <%= persona.nombreyapellido %>
+                </p>
+                <p>
+                    <%= persona.edad %>
+                </p>
+                <p>
+                    <%= persona.direccion %>
+                </p>
+                <p>
+                    <%= persona.sexo %>
+                </p>
+            </div>
+            <div class="col">
+                <form action="" method="post">
+                    <select class="form-select" name="vacuna" >
+                        <% vacunas.forEach(function(vacuna){ %>
+                            <option value=<%=vacuna.id %> ><%= vacuna.n_vacuna %></option>
+                          <% }); %>
+                    </select>
+                    <div>
+                        <label for="">Dosis</label>
+                        <input class="form-control" name="dosis" type="text">
+                    </div>
+                    <button class="btn btn-primary  ">Guardar</button>
+                </form>  
+            </div>
+        </div>
+        
+    </div>
+</div>
+<br>
+<h1>Vacunas</h1>
+<div class="list-group">
+    <% for(var i=0; i<dosis.length; i++) {%>
+        <li class="list-group-item">Vacuna: <%= dosis[i].vacuna.n_vacuna %> Dosis: <%= dosis[i].dosis %> </li>
+     <% } %>
+</div>
